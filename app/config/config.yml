@@ -40,7 +40,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    bundles:        [ MyAdminBundle, FOSUserBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -83,6 +83,9 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: My\UserBundle\Entity\User
-    registration:
+#    registration:
+#        form:
+#            type: my_user_bundle_registration_form_type
+    profile:
         form:
-            type: my_user_bundle_registration_form_type
+            type: my_user_profile

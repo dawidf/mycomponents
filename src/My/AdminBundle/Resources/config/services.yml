@@ -1,4 +1,6 @@
 services:
-#    my_admin.example:
-#        class: My\AdminBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    my_admin.twig_extension.admin_extension:
+        class: My\AdminBundle\Twig\Extension\AdminExtension
+        arguments: [ @service_container, @security.token_storage, @security.authorization_checker ]
+        tags:
+            - { name: twig.extension }

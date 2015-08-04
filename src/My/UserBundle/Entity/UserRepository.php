@@ -16,8 +16,8 @@ class UserRepository extends EntityRepository
     public function getUsers()
     {
         $qb = $this->createQueryBuilder('userRepository')
-            ->select('userRepository.username, userRepository.email,
-            userRepository.lastLogin, userRepository.locked,
+            ->select('userRepository.username, userRepository.id, userRepository.email,
+            userRepository.lastLogin, userRepository.locked, userRepository.enabled,
             userRepository.roles');
         ;
 

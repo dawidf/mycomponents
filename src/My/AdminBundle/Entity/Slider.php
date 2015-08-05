@@ -1,6 +1,6 @@
 <?php
 
-namespace My\FrontBundle\Entity;
+namespace My\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Slider
  *
  * @ORM\Table(name="slider")
- * @ORM\Entity(repositoryClass="My\FrontBundle\Entity\SliderRepository")
+ * @ORM\Entity(repositoryClass="My\AdminBundle\Entity\SliderRepository")
  */
 class Slider
 {
@@ -29,11 +29,9 @@ class Slider
     private $image;
     /**
      * @var UploadedFile
-     *
      * @Assert\Image(minWidth=50, maxWidth=150, minHeight="50", maxHeight="150",
      * maxSize="5M"
      * )
-     *
      */
     private $updateImage;
 

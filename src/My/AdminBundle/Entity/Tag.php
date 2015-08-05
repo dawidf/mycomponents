@@ -1,6 +1,6 @@
 <?php
 
-namespace My\FrontBundle\Entity;
+namespace My\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Tag
  *
  * @ORM\Table(name="tags")
- * @ORM\Entity(repositoryClass="My\FrontBundle\Entity\TagRepository")
+ * @ORM\Entity(repositoryClass="My\AdminBundle\Entity\TagRepository")
  */
 class Tag
 {
@@ -25,9 +25,18 @@ class Tag
      */
     private $name;
     /**
-     * @ORM\OneToMany(targetEntity="My\FrontBundle\Entity\Work", mappedBy="tags")
+     * @ORM\OneToMany(targetEntity="My\AdminBundle\Entity\Work", mappedBy="tags")
      */
     private $work;
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->work = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -61,21 +70,16 @@ class Tag
     {
         return $this->name;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->work = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+
+
 
     /**
      * Add work
      *
-     * @param \My\FrontBundle\Entity\Work $work
+     * @param \My\AdminBundle\Entity\Work $work
      * @return Tag
      */
-    public function addWork(\My\FrontBundle\Entity\Work $work)
+    public function addWork(\My\AdminBundle\Entity\Work $work)
     {
         $this->work[] = $work;
 
@@ -85,9 +89,9 @@ class Tag
     /**
      * Remove work
      *
-     * @param \My\FrontBundle\Entity\Work $work
+     * @param \My\AdminBundle\Entity\Work $work
      */
-    public function removeWork(\My\FrontBundle\Entity\Work $work)
+    public function removeWork(\My\AdminBundle\Entity\Work $work)
     {
         $this->work->removeElement($work);
     }

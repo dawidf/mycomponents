@@ -1,0 +1,25 @@
+<?php
+
+namespace My\AdminBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Work
+ *
+ * @ORM\Table(name="works")
+ * @ORM\Entity(repositoryClass="My\AdminBundle\Entity\WorkRepository")
+ */
+class Work extends AbstractItem
+{
+
+    /**
+     * @ORM\ManyToOne(targetEntity="My\AdminBundle\Entity\Work", inversedBy="tags")
+     * @ORM\JoinColumn(name="work_id", referencedColumnName="id")
+     */
+    private $tags;
+
+   
+
+
+}

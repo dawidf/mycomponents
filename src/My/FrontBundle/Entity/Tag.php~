@@ -61,4 +61,44 @@ class Tag
     {
         return $this->name;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->work = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add work
+     *
+     * @param \My\FrontBundle\Entity\Work $work
+     * @return Tag
+     */
+    public function addWork(\My\FrontBundle\Entity\Work $work)
+    {
+        $this->work[] = $work;
+
+        return $this;
+    }
+
+    /**
+     * Remove work
+     *
+     * @param \My\FrontBundle\Entity\Work $work
+     */
+    public function removeWork(\My\FrontBundle\Entity\Work $work)
+    {
+        $this->work->removeElement($work);
+    }
+
+    /**
+     * Get work
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getWork()
+    {
+        return $this->work;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace My\FrontBundle\Entity;
+namespace My\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,27 +8,28 @@ use Doctrine\ORM\Mapping as ORM;
  * Work
  *
  * @ORM\Table(name="works")
- * @ORM\Entity(repositoryClass="My\FrontBundle\Entity\WorkRepository")
+ * @ORM\Entity(repositoryClass="My\AdminBundle\Entity\WorkRepository")
  */
 class Work extends AbstractItem
 {
 
     /**
-     * @ORM\ManyToOne(targetEntity="My\FrontBundle\Entity\Work", inversedBy="tags")
+     * @ORM\ManyToOne(targetEntity="My\AdminBundle\Entity\Tag", inversedBy="work")
      * @ORM\JoinColumn(name="work_id", referencedColumnName="id")
      */
     private $tags;
 
+   
 
 
 
     /**
      * Set tags
      *
-     * @param \My\FrontBundle\Entity\Work $tags
+     * @param \My\AdminBundle\Entity\Work $tags
      * @return Work
      */
-    public function setTags(\My\FrontBundle\Entity\Work $tags = null)
+    public function setTags(\My\AdminBundle\Entity\Work $tags = null)
     {
         $this->tags = $tags;
 
@@ -38,7 +39,7 @@ class Work extends AbstractItem
     /**
      * Get tags
      *
-     * @return \My\FrontBundle\Entity\Work 
+     * @return \My\AdminBundle\Entity\Work 
      */
     public function getTags()
     {

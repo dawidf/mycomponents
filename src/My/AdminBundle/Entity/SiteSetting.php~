@@ -1,6 +1,6 @@
 <?php
 
-namespace My\FrontBundle\Entity;
+namespace My\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * SiteSetting
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="My\FrontBundle\Entity\SiteSettingRepository")
+ * @ORM\Entity(repositoryClass="My\AdminBundle\Entity\SiteSettingRepository")
  */
 class SiteSetting
 {
@@ -30,7 +30,6 @@ class SiteSetting
      */
     private $value;
 
-
     /**
      * Get id
      *
@@ -42,48 +41,48 @@ class SiteSetting
     }
 
     /**
-     * Set title
+     * Set option
      *
-     * @param string $title
+     * @param string $option
      * @return SiteSetting
      */
-    public function setTitle($title)
+    public function setOption($option)
     {
-        $this->title = $title;
+        $this->option = $option;
 
         return $this;
     }
 
     /**
-     * Get title
+     * Get option
      *
      * @return string 
      */
-    public function getTitle()
+    public function getOption()
     {
-        return $this->title;
+        return $this->option;
     }
 
     /**
-     * Set description
+     * Set value
      *
-     * @param string $description
+     * @param string $value
      * @return SiteSetting
      */
-    public function setDescription($description)
+    public function setValue($value)
     {
-        $this->description = $description;
+        $this->value = $value;
 
         return $this;
     }
 
     /**
-     * Get description
+     * Get value
      *
      * @return string 
      */
-    public function getDescription()
+    public function getValue()
     {
-        return $this->description;
+        return $this->value;
     }
 }

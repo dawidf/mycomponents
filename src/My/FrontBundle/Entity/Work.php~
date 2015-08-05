@@ -21,27 +21,4 @@ class Work extends AbstractItem
 
 
 
-
-    /**
-     * Set tags
-     *
-     * @param \My\FrontBundle\Entity\Work $tags
-     * @return Work
-     */
-    public function setTags(\My\FrontBundle\Entity\Work $tags = null)
-    {
-        $this->tags = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Get tags
-     *
-     * @return \My\FrontBundle\Entity\Work 
-     */
-    public function getTags()
-    {
-        return $this->tags;
-    }
 }
